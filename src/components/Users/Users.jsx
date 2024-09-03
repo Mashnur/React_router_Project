@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Users = ({ users}) => {
     const  {firstname, email,id} = users;
+    const navigate=useNavigate();
+    const handleShowDetail=()=>{
+        navigate(`/users/${id}`)
+    }
 
     return (
         <div className="grid grid-cols-2 gap-5 m-5 items-center">
@@ -10,6 +14,7 @@ const Users = ({ users}) => {
             <h2>{firstname}</h2>
             <p >{email}</p>
           <Link to={`/users/${id}`}>ShowDetails</Link>
+          <button onClick={handleShowDetail}>Click here to see</button>
             </div>
             
         </div>
