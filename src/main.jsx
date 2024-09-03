@@ -11,6 +11,7 @@ import Contact from './components/Home/Contact/Contact.jsx';
 import About from './components/About/About.jsx';
 import User from './components/User/User.jsx';
 import UserDetails from './components/UserDetails/UserDetails.jsx';
+import Posts from './components/Posts/Posts.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
       path: '/users/:usersId',
       loader : ({params})=>fetch(`https://jsonplaceholder.org/users/${params.usersId}`),
       element: <UserDetails></UserDetails>
+     },
+     {
+      path: '/Posts',
+      loader:({params})=>fetch(`https://jsonplaceholder.org/posts`),
+      element: <Posts></Posts>
      }
     ],
   },

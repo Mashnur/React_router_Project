@@ -8,7 +8,7 @@ const UserDetails = () => {
         <div className="bg-yellow-300">
             <h3>All about Users:{firstname}</h3>
             <p>{email}</p>
-            <p>A{id}</p>
+            <p>{id}</p>
            
             
         </div>
